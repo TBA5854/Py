@@ -1,0 +1,235 @@
+MariaDB [(none)]> use database py
+ERROR 1049 (42000): Unknown database 'database'
+MariaDB [(none)]> use py
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [py]> show tables;
++--------------+
+| Tables_in_py |
++--------------+
+| s1           |
++--------------+
+1 row in set (0.003 sec)
+
+MariaDB [py]> desc s1
+    -> ;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| rn0   | int(3)      | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| class | int(2)      | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.008 sec)
+
+MariaDB [py]> select * from s1;
++------+------+-------+
+| rn0  | name | class |
++------+------+-------+
+|    1 | TBA  |    12 |
++------+------+-------+
+1 row in set (0.002 sec)
+
+MariaDB [py]> exit
+MariaDB [(none)]> use py
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [py]> insert into s1 values (2,"vishwa",12)
+    -> ;
+Query OK, 1 row affected (0.036 sec)
+
+MariaDB [py]> select * from s1;
++------+--------+-------+
+| rn0  | name   | class |
++------+--------+-------+
+|    1 | TBA    |    12 |
+|    2 | vishwa |    12 |
++------+--------+-------+
+2 rows in set (0.002 sec)
+
+MariaDB [py]> exit
+MariaDB [(none)]> delete from s1 where name = ("j" or "s) and rno <10 ;
+    "> "
+    -> ;
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> delete from s1 where name = ("j" or "s;) and rno <10 ;
+    "> "
+    -> ;
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use py
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [py]> delete from s1 where name = ("j" or "s") and rno <10 ;
+";
+ERROR 1054 (42S22): Unknown column 'rno' in 'where clause'
+    "> "
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '";
+"' at line 1
+MariaDB [py]> delete from s1 where name = ("j" or "s") and rn0 <10 ;
+Query OK, 6 rows affected, 42 warnings (0.022 sec)
+
+MariaDB [py]> select * from s1;
++------+------+-------+
+| rn0  | name | class |
++------+------+-------+
+|   13 | j    |    12 |
+|   16 | s    |    12 |
+|   13 | j    |    12 |
+|   16 | s    |    12 |
+|   13 | j    |    12 |
+|   16 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   19 | j    |    12 |
+|   20 | s    |    12 |
++------+------+-------+
+32 rows in set (0.002 sec)
+
+MariaDB [py]> roolback
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'roolback' at line 1
+MariaDB [py]> rollback
+    -> ;
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [py]> select * from s1;
++------+------+-------+
+| rn0  | name | class |
++------+------+-------+
+|   13 | j    |    12 |
+|   16 | s    |    12 |
+|   13 | j    |    12 |
+|   16 | s    |    12 |
+|   13 | j    |    12 |
+|   16 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   17 | j    |    12 |
+|   18 | s    |    12 |
+|   19 | j    |    12 |
+|   20 | s    |    12 |
++------+------+-------+
+32 rows in set (0.002 sec)
+
+MariaDB [py]> delete s1
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [py]> delete from s1
+    -> ;
+Query OK, 32 rows affected (0.012 sec)
+
+MariaDB [py]> select * from s1;
+Empty set (0.002 sec)
+
+MariaDB [py]> insert into s1 (1,"TBA",12)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1,"TBA",12)' at line 1
+MariaDB [py]> insert into s1 values (1,"TBA",12)
+    -> ;
+Query OK, 1 row affected (0.011 sec)
+
+MariaDB [py]> insert into s1 values (2,"vishwa",12);
+Query OK, 1 row affected (0.019 sec)
+
+MariaDB [py]> insert into s1 values (3,"j",12);
+Query OK, 1 row affected (0.017 sec)
+
+MariaDB [py]> insert into s1 values (4,"s",12);
+Query OK, 1 row affected (0.009 sec)
+
+MariaDB [py]> select * from s1;
++------+--------+-------+
+| rn0  | name   | class |
++------+--------+-------+
+|    1 | TBA    |    12 |
+|    2 | vishwa |    12 |
+|    3 | j      |    12 |
+|    4 | s      |    12 |
++------+--------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [py]> alter table s1 set rn0 add primary
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set rn0 add primary' at line 1
+MariaDB [py]> alter table s1 set rn0 add primary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set rn0 add primary' at line 1
+MariaDB [py]> alter table s1 set rn0 primary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set rn0 primary' at line 1
+MariaDB [py]> alter table s1 set rn0 int(3) primary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set rn0 int(3) primary' at line 1
+MariaDB [py]> alter table s1 set rn0 int(3) primary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set rn0 int(3) primary' at line 1
+MariaDB [py]> alter table s1 set rn0 int(3) not null primary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set rn0 int(3) not null primary' at line 1
+MariaDB [py]> alter table s1 set (rn0 int(3) not null primary);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set (rn0 int(3) not null primary)' at line 1
+MariaDB [py]> alter table s1 add primary key rn0
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [py]> alter table s1 add primary key (rn0)
+    -> ;
+Query OK, 0 rows affected (0.050 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [py]> desc s1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| rn0   | int(3)      | NO   | PRI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| class | int(2)      | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.066 sec)
+
+MariaDB [py]> tee
+Currently logging to file 'check.txt'
+MariaDB [py]> exit

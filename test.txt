@@ -1,0 +1,123 @@
+MariaDB [(none)]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| py                 |
+| sys                |
+| test               |
++--------------------+
+6 rows in set (0.002 sec)
+
+MariaDB [(none)]> use py
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [py]> desc sq
+    -> Ctrl-C -- exit!
+Aborted
+MariaDB [py]> desc s1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| rn0   | int(3)      | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| class | int(2)      | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.013 sec)
+
+MariaDB [py]> select * from s1;
++------+------+-------+
+| rn0  | name | class |
++------+------+-------+
+|    1 | TBA  |    12 |
++------+------+-------+
+1 row in set (0.002 sec)
+
+MariaDB [py]> exit
+MariaDB [(none)]> select * from s1;
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use py
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [py]> select * from s1;
++------+--------+-------+
+| rn0  | name   | class |
++------+--------+-------+
+|    1 | TBA    |    12 |
+|    2 | vishwa |    12 |
+|    3 | j      |    12 |
+|    4 | s      |    12 |
++------+--------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [py]> select * from s1;
++------+--------+-------+
+| rn0  | name   | class |
++------+--------+-------+
+|    1 | TBA    |    12 |
+|    2 | vishwa |    12 |
+|    3 | j      |    12 |
+|    4 | s      |    12 |
++------+--------+-------+
+4 rows in set (0.002 sec)
+
+MariaDB [py]> select * from s1;
++------+--------+-------+
+| rn0  | name   | class |
++------+--------+-------+
+|    1 | TBA    |    12 |
+|    2 | vishwa |    12 |
+|    3 | j      |    12 |
+|    4 | s      |    12 |
+|    3 | j      |    12 |
+|    6 | s      |    12 |
+|   13 | j      |    12 |
+|   16 | s      |    12 |
+|   13 | j      |    12 |
+|   16 | s      |    12 |
+|   13 | j      |    12 |
+|   16 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   17 | j      |    12 |
+|   18 | s      |    12 |
+|   19 | j      |    12 |
+|   20 | s      |    12 |
++------+--------+-------+
+38 rows in set (0.116 sec)
+
+MariaDB [py]> delete from s1 where name = ("j" or "s) and rno <10
+    "> ;
+    "> 
+    "> 
+    "> 
+    "> q
+    "> Ctrl-C -- exit!
+Aborted
