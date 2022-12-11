@@ -1,4 +1,4 @@
-import mariadb as mydb
+import mysql.connector as mydb
 con = mydb.connect(
 	host = "localhost",
 	user = 'u0_a18',
