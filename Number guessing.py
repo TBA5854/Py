@@ -5,6 +5,7 @@ def geta():
 def getb():
 	b=input("Enter lower limit : ")
 	return b
+#Hi guys
 g=0
 a=geta()
 b=getb()
