@@ -1,34 +1,34 @@
 from random import randint
 a=None
 b=None
-a=input("Enter upper limit : ")
-b=input("Enter lower limit : ")
-while a==None or a.isdigit() == False:
-    print("Invalid upper limit , Enter a number")
-    a=input("Enter upper limit : ")
-else:
-	a=int(a)
+def getno(a,l,m,n,p):
+	v=0
+	while a==None or a.isdigit() == False:
+		if v>0:
+	  	  print("Invalid "+l+p+", Enter a number")
+		a=input("Enter "+n+m+" : ")
+		v+=1
+	else:
+		a=int(a)
+		return a
+b=getno(b,"upper ", "limit " , "upper " , "limit")
+a=getno(a,"lower ","limit" , "lower " , "limit")
 #Hi guys !
-while b==None or b.isdigit() == False:
-    print("Invalid lower limit , Enter a number")
-    b=input("Enter lower limit : ")
-else:
-	b=int(b)
 g=0
-r=randint(b,a)
-			#print(r)
+r=randint(a,b)
 while True:
-	x=int(input("Enter your guess : "))
+	x=None
+	x=getno(x," input "," your"," guess " ,"")
 	while x != r:
-		x=int(input("Enter your guess : "))
 		if x > r :
 			print("You guessed higher , Try again")
 			g+=1
-			continue
+			
 		else:
 			print("You guessed lower , Try again")
 			g+=1
-			continue
+			
+		x=int(input("Enter your guess : "))
 	else :
 		print("You guessed right")
 		g+=1
