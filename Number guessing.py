@@ -20,7 +20,7 @@ while z=="yes":
 		a=getno(a,"lower ","limit" , "lower " , "limit")
 		r=randint(a,b)
 	x=None
-	x=getno(x," input "," your"," guess " ,"")
+	x=getno(x," input"," guess"," your" ,"")
 	while x != r and y ==0:
 		if x > r :
 			print("You guessed higher , Try again")
