@@ -3,8 +3,8 @@ import mysql.connector as mydb
 from tabulate import tabulate
 con = mydb.connect(
 	host = "localhost",
-	user = 'tba',
-	password="",
+	user = 'TBA',
+	password="1234",
 	database = "py")
 cursor= con.cursor()
 # Create the main window

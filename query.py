@@ -2,8 +2,8 @@ import mysql.connector as mydb
 from tabulate import tabulate
 con = mydb.connect(
 	host = "localhost",
-	user = 'tba',
-	password="",
+	user = 'TBA',
+	password="1234",
 	database = "py")
 cursor= con.cursor()
 """print (con)
@@ -38,6 +38,7 @@ while q != "EXIT":
     except Exception as e :
     	con.rollback()
     	print("error",e)
+		pass
 print("Thanks for using , a program by tba")
 cursor.close()
 con.close()

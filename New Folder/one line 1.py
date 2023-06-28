@@ -1,0 +1,1 @@
+print ("Hi "+ input ("enter your name \n "))#ur name there
